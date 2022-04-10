@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profile Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Produkt:</h2>
+        <div class="row">
+                       <div class="col-9">
+                <a class="btn btn-warning" th:href="@{/produkt/update(id=${produkt.id})}">Edytuj</a>
+                <a class="btn btn-danger" th:href="@{/produkt/delete(id=${produkt.id})}">Usuń</a>
+                <a class="btn btn-secondary" th:href="@{/produkt/list}">Powrót</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">Id :</div>
+            <div class="col-9">
+                <p th:text="${produkt.id}"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">nazwa :</div>
+            <div class="col-9">
+                <p th:text="${produkt.nazwa}"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">ilosc :</div>
+            <div class="col-9">
+                <p th:text="${produkt.ilosc}"></p>
+            </div>
+            <div class="row">
+                <div class="col-3">cena :</div>
+                <div class="col-9">
+                    <p th:text="${produkt.cena}"></p>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

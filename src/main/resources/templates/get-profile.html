@@ -13,13 +13,13 @@
         <div class="row">
             <div class="col-3">Akcje :</div>
             <div class="col-9">
-                <a class="btn btn-warning" th:href="@{/profile/update(id=${profile.id})}">Edytuj</a>
-                <a class="btn btn-danger" th:href="@{/profile/delete(id=${profile.id})}">Usuń</a>
-                <a class="btn btn-secondary" th:href="@{/profile/list}">Powrót</a>
+                <a class="btn btn-warning" th:href="@{/templates/produkt/update(id=${profile.id})}">Edytuj</a>
+                <a class="btn btn-danger" th:href="@{/templates/produkt/delete(id=${profile.id})}">Usuń</a>
+                <a class="btn btn-secondary" th:href="@{/templates/produkt/list}">Powrót</a>
             </div>
         </div>
         <div class="row" style="height: 200px">
-            <img class="img-thumbnail" style="height: 200px; width: 200px" th:src="@{/profile/zdjecie(id=${profile.id})}"/>
+            <img class="img-thumbnail" style="height: 200px; width: 200px" th:src="@{/templates/produkt/zdjecie(id=${profile.id})}"/>
         </div>
         <div class="row">
             <div class="col-3">Id :</div>

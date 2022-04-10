@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h2>Profil:</h2>
-        <form th:method="POST" th:action="@{/profile/create}" th:object="${newProfile}" enctype="multipart/form-data">
+        <form th:method="POST" th:action="@{/templates/produkt/create}" th:object="${newProfile}" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="imie">Imie</label>
                 <input id="imie" class="form-control" type="text" th:field="*{imie}">

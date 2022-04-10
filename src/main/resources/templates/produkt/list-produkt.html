@@ -1,6 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Profile Management</title>
+    <title>Produkt Management</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -9,25 +9,26 @@
 </head>
 <body>
 <div class="container">
-    <a class="btn btn-primary" th:href="@{/templates/produkt/create}">Stwórz</a>
+    <a class="btn btn-primary" th:href="@{/produkt/create}">Stwórz</a>
     <table class="table">
         <thead>
         <tr>
-            <td>#</td>
-            <td>Imie</td>
-            <td>Nazwisko</td>
-            <td>Akcje</td>
+            <td>id</td>
+            <td>nazwa</td>
+            <td>ilosc</td>
+            <td>cena</td>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="profile : ${profiles}">
-            <td th:text="${profile.id}"></td>
-            <td th:text="${profile.imie}"></td>
-            <td th:text="${profile.nazwisko}"></td>
+        <tr th:each="produkt : ${produkts}">
+            <td th:text="${produkt.id}"></td>
+            <td th:text="${produkt.nazwa}"></td>
+            <td th:text="${produkt.ilosc}"></td>
+            <td th:text="${produkt.cena}"></td>
             <td>
-                <a class="btn btn-primary" th:href="@{/templates/produkt/get(id=${profile.id})}">Otwórz</a>
-                <a class="btn btn-warning" th:href="@{/templates/produkt/update(id=${profile.id})}">Edytuj</a>
-                <a class="btn btn-danger" th:href="@{/templates/produkt/delete(id=${profile.id})}">Usuń</a>
+                <a class="btn btn-primary" th:href="@{/produkt/get(id=${produkt.id})}">Otwórz</a>
+                <a class="btn btn-warning" th:href="@{/produkt/update(id=${produkt.id})}">Edytuj</a>
+                <a class="btn btn-danger" th:href="@{/produkt/delete(id=${produkt.id})}">Usuń</a>
             </td>
         </tr>
         </tbody>

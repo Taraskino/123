@@ -1,0 +1,12 @@
+<p th:text="'Hello World ' + ${imie}"></p>
+
+<div th:each = "i : ${imiona}">
+    <p th:text = "${i}"></p>
+</div>
+
+<a th:href = "@{/test/nowy}">Nowy widok</a>
+
+<form method="POST" th:action="@{/test/update}" th:object="${zmienObiekt}">
+    <input type="text" th:field = "*{zmien}">
+    <input type="submit">
+</form>
