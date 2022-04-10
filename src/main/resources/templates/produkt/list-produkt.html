@@ -10,6 +10,18 @@
 <body>
 <div class="container">
     <a class="btn btn-primary" th:href="@{/produkt/create}">Stwórz</a>
+    <form method="get" th:action="@{/produkt/list}" th:object="${filtr}">
+        <div class="form-group">
+            <label for="min">Min Cena</label>
+            <input id="min" type="number" min="0" step="0.01" th:field="*{min}"></input>
+        </div>
+        <div class="form-group">
+            <label for="max">Max Cena</label>
+
+            <input id="max" type="number" max="0" step="0.01" th:field="*{max}"></input>
+        </div>
+        <input type="submit">Filtruj</input>
+    </form>
     <table class="table">
         <thead>
         <tr>

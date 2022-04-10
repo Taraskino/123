@@ -2,11 +2,20 @@ package pl.edu.wszib.http2.service.model;
 
 import pl.edu.wszib.http2.service.common.CrudResource;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Produkt implements CrudResource<Integer> {
 
+  @Id
+  @GeneratedValue
   private Integer id;
+  @Column(nullable = false)
   private String nazwa;
+  @Column(nullable = false)
   private Integer ilosc;
+  @Column(nullable = false)
   private Float cena;
 
   @Override

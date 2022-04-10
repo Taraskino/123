@@ -9,7 +9,9 @@
 </head>
 <body>
 <div class="container">
-    <a class="btn btn-primary" th:href="@{/templates/produkt/create}">Stwórz</a>
+    <a class="btn btn-primary" th:href="@{/profile/create}">Stwórz</a>
+    <a class="btn btn-secondary" th:each="p : ${plec}" th:href="@{/profile/list(plec=${p})}" th:text="'Pokaz ' + ${p}">"</a>
+    <a class="btn btn-primary" th:href="@{/profile/list}">Powrót</a>
     <table class="table">
         <thead>
         <tr>
@@ -25,9 +27,9 @@
             <td th:text="${profile.imie}"></td>
             <td th:text="${profile.nazwisko}"></td>
             <td>
-                <a class="btn btn-primary" th:href="@{/templates/produkt/get(id=${profile.id})}">Otwórz</a>
-                <a class="btn btn-warning" th:href="@{/templates/produkt/update(id=${profile.id})}">Edytuj</a>
-                <a class="btn btn-danger" th:href="@{/templates/produkt/delete(id=${profile.id})}">Usuń</a>
+                <a class="btn btn-primary" th:href="@{/profile/get(id=${profile.id})}">Otwórz</a>
+                <a class="btn btn-warning" th:href="@{/profile/update(id=${profile.id})}">Edytuj</a>
+                <a class="btn btn-danger" th:href="@{/profile/delete(id=${profile.id})}">Usuń</a>
             </td>
         </tr>
         </tbody>

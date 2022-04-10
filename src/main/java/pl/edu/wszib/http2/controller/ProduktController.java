@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.edu.wszib.http2.service.ProduktService;
 import pl.edu.wszib.http2.service.exception.NotFoundException;
+import pl.edu.wszib.http2.service.model.Filtr;
 import pl.edu.wszib.http2.service.model.Produkt;
 
 @Controller
@@ -20,7 +21,14 @@ public class ProduktController {
     }
 
     @GetMapping("/list")
-    public String list(Model model) {
+    public String list(Filtr filtr, Model model) {
+        if(filtr == null){
+            model.addAttribute("produkty", produktService.list());
+            model.addAttribute("filtr", new Filtr());
+        } else {
+            model.addAttribute("produkty", produktService.list(filtr));
+            model.addAttribute("filtr", filtr);
+       }
 /*
         Produkt produkt = new Produkt();
         produkt.setCena(4.5f);
@@ -28,9 +36,7 @@ public class ProduktController {
         produkt.setNazwa("Domestos");
         produktService.create(produkt);
 */
-
-        model.addAttribute("produkts", produktService.list());
-        return "produkt/list-produkt";
+         return "produkt/list-produkt";
     }
 
     @GetMapping("/create")

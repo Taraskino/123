@@ -10,10 +10,16 @@
 <body>
     <div class="container">
         <h2>Profil:</h2>
-        <form th:method="POST" th:action="@{/templates/produkt/update(id=${updateProfile.id})}" th:object="${updateProfile}" enctype="multipart/form-data">
+        <form th:method="POST" th:action="@{/profile/update(id=${updateProfile.id})}" th:object="${updateProfile}" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="id">Id</label>
                 <input id="id" class="form-control" type="text" th:field="*{id}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="plec">Wybierz plec</label>
+                <select id="plec" class="form-control" type="text" th:field="*{plec}">
+                    <option th:each="p : ${plec}" th:value="${p}" th:text = "${p}"></option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="imie">Imie</label>
